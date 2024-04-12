@@ -1,7 +1,8 @@
 import React from 'react';
 
-function Food(){
-  return <h1>i like potato!</h1>
+function Food({ fav }){
+  // console.log({fav});
+  return <h1>i like { fav }!</h1>
 }
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
     <div>
       <h1>hello!!</h1>
       <Food fav="kimchi" />
+      <Food fav="burger" />
+      <Food fav="tteokbboki" />
+      <Food fav="kimbab" />
     </div>
 
   );
