@@ -7,8 +7,14 @@ class App extends React.Component{
     movies: [],
   };
 
+  // async(기다려라!) 와 await(await 뒤에 따라오는 애를)를 붙여 api를 가져오는데 시간소요가 있음을 상기시킨다.
+  getMovies = async () => {
+    const movies = await axios.get("https://yts.mx/api/v2/list_movies.json");
+  }
+
+  // 컴포넌트가 마운트되면 getMovies 호출
   componentDidMount(){
-    axios.get("https://yts.mx/api/v2/list_movies.json");
+    this.getMovies();
   }
   // componentDidMount에서 data를 fetch 함 
 
